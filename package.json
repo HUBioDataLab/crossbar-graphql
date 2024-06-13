@@ -1,0 +1,38 @@
+{
+  "name": "crossbar-graphql-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Melih DARCAN",
+    "email": "57872471+MelihDarcanxyz@users.noreply.github.com",
+    "url": "https://melihdarcan.xyz"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "",
+    "test": ""
+  },
+  "dependencies": {
+    "@apollo/server": "^4.7.5",
+    "@neo4j/graphql": "^3.22.0",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
+    "install": "^0.13.0",
+    "neo4j-driver": "^5.10.0"
+  }
+}
