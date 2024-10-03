@@ -556,8 +556,8 @@ const typeDefs = `#graphql
 `;
 
 const driver = neo4j.driver(
-    process.env.MY_NEO4J_URI,
-    neo4j.auth.basic(process.env.MY_NEO4J_USERNAME, process.env.MY_NEO4J_PASSWORD)
+    process.env.NEO4J_URI,
+    neo4j.auth.basic(process.env.NEO4J_USERNAME, process.env.MY_NEO4J_PASSWORD)
 );
 
 const neoSchema = new Neo4jGraphQL({ typeDefs, driver });
@@ -567,7 +567,7 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-    context: async ({ req }) => ({ req, sessionConfig: { database: process.env.MY_NEO4J_DATABASE_NAME }}),
+    context: async ({ req }) => ({ req, sessionConfig: { database: process.env.NEO4J_DATABASE_NAME }}),
     listen: { port: process.env.API_PORT },
 });
 
