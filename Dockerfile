@@ -6,4 +6,4 @@ WORKDIR apollo
 RUN npm i install
 
 ENTRYPOINT [ "node" ]
-CMD [ "--max-old-space-size=4096", "index.js" ]
+CMD [ "--max-old-space-size=6144", "index.js" ]
