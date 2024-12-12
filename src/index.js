@@ -661,32 +661,26 @@ type SideEffect {
 ###
 
 interface Biological_process_is_a_biological_process @relationshipProperties {
-  id: ID!
 }
 
 interface Biological_process_negatively_regulates_biological_process
   @relationshipProperties {
-  id: ID!
 }
 
 interface Biological_process_negatively_regulates_molecular_function
   @relationshipProperties {
-  id: ID!
 }
 
 interface Biological_process_part_of_biological_process
   @relationshipProperties {
-  id: ID!
 }
 
 interface Biological_process_positively_regulates_biological_process
   @relationshipProperties {
-  id: ID!
 }
 
 interface Biological_process_positively_regulates_molecular_function
   @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -694,12 +688,10 @@ interface Biological_process_positively_regulates_molecular_function
 ###
 
 interface Cellular_component_is_a_cellular_component @relationshipProperties {
-  id: ID!
 }
 
 interface Cellular_component_part_of_cellular_component
   @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -707,29 +699,24 @@ interface Cellular_component_part_of_cellular_component
 ###
 
 interface Disease_is_a_disease @relationshipProperties {
-  id: ID!
 }
 
 interface Disease_is_associated_with_disease @relationshipProperties {
-  id: ID!
   disgenet_jaccard_genes_score: Float
   disgenet_jaccard_variants_score: Float
   source: [String]
 }
 
 interface Disease_is_comorbid_with_disease @relationshipProperties {
-  id: ID!
 }
 
 interface Disease_is_treated_by_drug @relationshipProperties {
-  id: ID!
   max_phase: Int
   pubmed_ids: [String]
   source: [String]
 }
 
 interface Disease_modulates_pathway @relationshipProperties {
-  id: ID!
   source: [String]
 }
 
@@ -738,7 +725,6 @@ interface Disease_modulates_pathway @relationshipProperties {
 ###
 
 interface Ec_number_is_a_ec_number @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -746,18 +732,15 @@ interface Ec_number_is_a_ec_number @relationshipProperties {
 ###
 
 interface Gene_encodes_protein @relationshipProperties {
-  id: ID!
 }
 
 interface Gene_is_orthologous_with_gene @relationshipProperties {
-  id: ID!
   oma_orthology_score: Float
   relation_type: String
   source: [String]
 }
 
 interface Gene_is_related_to_disease @relationshipProperties {
-  id: ID!
   allele_id: String
   clinical_significance: String
   dbsnp_id: [String]
@@ -773,7 +756,6 @@ interface Gene_is_related_to_disease @relationshipProperties {
 }
 
 interface Gene_regulates_gene @relationshipProperties {
-  id: ID!
   dorothea_confidence_level: String
   pubmed_id: [String]
   source: [String]
@@ -785,22 +767,18 @@ interface Gene_regulates_gene @relationshipProperties {
 ###
 
 interface Molecular_function_is_a_molecular_function @relationshipProperties {
-  id: ID!
 }
 
 interface Molecular_function_negatively_regulates_molecular_function
   @relationshipProperties {
-  id: ID!
 }
 
 interface Molecular_function_part_of_molecular_function
   @relationshipProperties {
-  id: ID!
 }
 
 interface Molecular_function_positively_regulates_molecular_function
   @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -824,7 +802,6 @@ interface Compound_targets_protein @relationshipProperties {
 ###
 
 interface Organism_causes_disease @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -832,19 +809,15 @@ interface Organism_causes_disease @relationshipProperties {
 ###
 
 interface Pathway_is_equivalent_to_pathway @relationshipProperties {
-  id: ID!
 }
 
 interface Pathway_is_part_of_pathway @relationshipProperties {
-  id: ID!
 }
 
 interface Pathway_is_ortholog_to_pathway @relationshipProperties {
-  id: ID!
 }
 
 interface Pathway_participates_pathway @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -852,11 +825,9 @@ interface Pathway_participates_pathway @relationshipProperties {
 ###
 
 interface Phenotype_is_a_phenotype @relationshipProperties {
-  id: ID!
 }
 
 interface Phenotype_is_associated_with_disease @relationshipProperties {
-  id: ID!
   evidence: String
   pubmed_ids: [String]
 }
@@ -866,33 +837,27 @@ interface Phenotype_is_associated_with_disease @relationshipProperties {
 ###
 
 interface Protein_belongs_to_organism @relationshipProperties {
-  id: ID!
 }
 
 interface Protein_catalyzes_ec_number @relationshipProperties {
-  id: ID!
 }
 
 interface Protein_contributes_to_molecular_function @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_enables_molecular_function @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_has_domain @relationshipProperties {
-  id: ID!
   start: String
   end: String
 }
 
 interface Protein_interacts_with_protein @relationshipProperties {
-  id: ID!
   intact_score: Float
   interaction_type: String
   method: String
@@ -903,35 +868,29 @@ interface Protein_interacts_with_protein @relationshipProperties {
 }
 
 interface Protein_involved_in_biological_process @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_is_active_in_cellular_component @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_is_associated_with_phenotype @relationshipProperties {
-  id: ID!
 }
 
 interface Protein_located_in_cellular_component @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_part_of_cellular_component @relationshipProperties {
-  id: ID!
   evidence_code: String
   reference: String
 }
 
 interface Protein_take_part_in_pathway @relationshipProperties {
-  id: ID!
   source: String
 }
 
@@ -940,16 +899,13 @@ interface Protein_take_part_in_pathway @relationshipProperties {
 ###
 
 interface Protein_domain_enables_molecular_function @relationshipProperties {
-  id: ID!
 }
 
 interface Protein_domain_involved_in_biological_process
   @relationshipProperties {
-  id: ID!
 }
 
 interface Protein_domain_located_in_cellular_component @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -957,7 +913,6 @@ interface Protein_domain_located_in_cellular_component @relationshipProperties {
 ###
 
 interface Side_effect_is_a_side_effect @relationshipProperties {
-  id: ID!
 }
 
 ###
@@ -965,29 +920,24 @@ interface Side_effect_is_a_side_effect @relationshipProperties {
 ###
 
 interface Drug_downregulates_gene @relationshipProperties {
-  id: ID!
   references: [String]
 }
 
 interface Drug_has_side_effect @relationshipProperties {
-  id: ID!
   frequency: String
   proportional_reporting_ratio: Float
   source: [String]
 }
 
 interface Drug_has_target_in_pathway @relationshipProperties {
-  id: ID!
   source: String
 }
 
 interface Drug_upregulates_gene @relationshipProperties {
-  id: ID!
   references: [String]
 }
 
 interface Drug_interacts_with_drug @relationshipProperties {
-  id: ID!
   interaction_level: String
   interaction_type: [String]
   recommendation: String
@@ -995,7 +945,6 @@ interface Drug_interacts_with_drug @relationshipProperties {
 }
 
 interface Drug_targets_protein @relationshipProperties {
-  id: ID!
   activity_type: String
   activity_value: Float
   confidence_score: Float
