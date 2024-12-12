@@ -183,7 +183,12 @@ type Disease {
       direction: IN
       properties: "Gene_is_related_to_disease"
     )
-  # organismCausesDiseaseReverse: [OrganismTaxon!]! @relationship(type: "organism_causes_disease", direction: IN, properties: "organism_causes_disease")
+  organismCausesDiseaseReverse: [OrganismTaxon!]!
+    @relationship(
+      type: "Organism_causes_disease",
+      direction: IN,
+      properties: "Organism_causes_disease"
+    )
   phenotypeIsAssociatedWithDiseaseReverse: [Phenotype!]!
     @relationship(
       type: "Phenotype_is_associated_with_disease"
@@ -392,7 +397,12 @@ type MolecularFunction {
 type OrganismTaxon {
   id: ID
   organism_name: String
-  ## organismCausesDisease: [Disease!]! @relationship(type: "organism_causes_disease", direction: OUT, properties: "organism_causes_disease")
+  organismCausesDisease: [Disease!]!
+    @relationship(
+      type: "Organism_causes_disease",
+      direction: OUT,
+      properties: "Organism_causes_disease"
+    )
   proteinBelongsToOrganismReverse: [Protein!]!
     @relationship(
       type: "Protein_belongs_to_organism"
@@ -813,7 +823,9 @@ interface Compound_targets_protein @relationshipProperties {
 # OrganismTaxon -> Any
 ###
 
-# Wow, such empty
+interface Organism_causes_disease @relationshipProperties {
+  id: ID!
+}
 
 ###
 # Pathway -> Any
