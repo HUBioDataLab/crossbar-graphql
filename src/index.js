@@ -23,43 +23,36 @@ type BiologicalProcess {
     @relationship(
       type: "Biological_process_is_a_biological_process"
       direction: OUT
-      properties: "Biological_process_is_a_biological_process"
     )
   biologicalProcessNegativelyRegulatesBiologicalProcess: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_negatively_regulates_biological_process"
       direction: OUT
-      properties: "Biological_process_negatively_regulates_biological_process"
     )
   biologicalProcessNegativelyRegulatesMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Biological_process_negatively_regulates_molecular_function"
       direction: OUT
-      properties: "Biological_process_negatively_regulates_molecular_function"
     )
   biologicalProcessPartOfBiologicalProcess: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_part_of_biological_process"
       direction: OUT
-      properties: "Biological_process_part_of_biological_process"
-    )
+      )
   biologicalProcessPositivelyRegulatesBiologicalProcess: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_positively_regulates_biological_process"
       direction: OUT
-      properties: "Biological_process_positively_regulates_biological_process"
     )
   biologicalProcessPositivelyRegulatesMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Biological_process_positively_regulates_molecular_function"
       direction: OUT
-      properties: "Biological_process_positively_regulates_molecular_function"
     )
   proteinDomainInvolvedInBiologicalProcessReverse: [ProteinDomain!]!
     @relationship(
       type: "Protein_domain_involved_in_biological_process"
       direction: IN
-      properties: "Protein_domain_involved_in_biological_process"
     )
   proteinInvolvedInBiologicalProcessReverse: [Protein!]!
     @relationship(
@@ -77,19 +70,16 @@ type CellularComponent {
     @relationship(
       type: "Cellular_component_is_a_cellular_component"
       direction: OUT
-      properties: "Cellular_component_is_a_cellular_component"
     )
   cellularComponentPartOfCellularComponent: [CellularComponent!]!
     @relationship(
       type: "Cellular_component_part_of_cellular_component"
       direction: OUT
-      properties: "Cellular_component_part_of_cellular_component"
     )
   proteinDomainLocatedInCellularComponentReverse: [ProteinDomain!]!
     @relationship(
       type: "Protein_domain_located_in_cellular_component"
       direction: IN
-      properties: "Protein_domain_located_in_cellular_component"
     )
   proteinIsActiveInCellularComponentReverse: [Protein!]!
     @relationship(
@@ -151,7 +141,6 @@ type Disease {
     @relationship(
       type: "Disease_is_a_disease"
       direction: OUT
-      properties: "Disease_is_a_disease"
     )
   diseaseIsAssociatedWithDisease: [Disease!]!
     @relationship(
@@ -163,7 +152,6 @@ type Disease {
     @relationship(
       type: "Disease_is_comorbid_with_disease"
       direction: OUT
-      properties: "Disease_is_comorbid_with_disease"
     )
   diseaseIsTreatedByDrug: [Drug!]!
     @relationship(
@@ -187,7 +175,6 @@ type Disease {
     @relationship(
       type: "Organism_causes_disease",
       direction: IN,
-      properties: "Organism_causes_disease"
     )
   phenotypeIsAssociatedWithDiseaseReverse: [Phenotype!]!
     @relationship(
@@ -272,13 +259,11 @@ type EcNumber {
     @relationship(
       type: "Ec_number_is_a_ec_number"
       direction: OUT
-      properties: "Ec_number_is_a_ec_number"
     )
   proteinCatalyzesEcNumberReverse: [Protein!]!
     @relationship(
       type: "Protein_catalyzes_ec_number"
       direction: IN
-      properties: "Protein_catalyzes_ec_number"
     )
 }
 
@@ -306,7 +291,6 @@ type Gene {
     @relationship(
       type: "Gene_encodes_protein"
       direction: OUT
-      properties: "Gene_encodes_protein"
     )
   geneIsOrthologousWithGene: [Gene!]!
     @relationship(
@@ -342,37 +326,31 @@ type MolecularFunction {
     @relationship(
       type: "Biological_process_negatively_regulates_molecular_function"
       direction: IN
-      properties: "Biological_process_negatively_regulates_molecular_function"
     )
   biologicalProcessPositivelyRegulatesMolecularFunctionReverse: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_positively_regulates_molecular_function"
       direction: IN
-      properties: "Biological_process_positively_regulates_molecular_function"
     )
   molecularFunctionIsAMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Molecular_function_is_a_molecular_function"
       direction: OUT
-      properties: "Molecular_function_is_a_molecular_function"
     )
   molecularFunctionNegativelyRegulatesMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Molecular_function_negatively_regulates_molecular_function"
       direction: OUT
-      properties: "Molecular_function_negatively_regulates_molecular_function"
     )
   molecularFunctionPartOfMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Molecular_function_part_of_molecular_function"
       direction: OUT
-      properties: "Molecular_function_part_of_molecular_function"
     )
   molecularFunctionPositivelyRegulatesMolecularFunction: [MolecularFunction!]!
     @relationship(
       type: "Molecular_function_positively_regulates_molecular_function"
       direction: OUT
-      properties: "Molecular_function_positively_regulates_molecular_function"
     )
   proteinContributesToMolecularFunctionReverse: [Protein!]!
     @relationship(
@@ -384,7 +362,6 @@ type MolecularFunction {
     @relationship(
       type: "Protein_domain_enables_molecular_function"
       direction: IN
-      properties: "Protein_domain_enables_molecular_function"
     )
   proteinEnablesMolecularFunctionReverse: [Protein!]!
     @relationship(
@@ -401,13 +378,11 @@ type OrganismTaxon {
     @relationship(
       type: "Organism_causes_disease",
       direction: OUT,
-      properties: "Organism_causes_disease"
     )
   proteinBelongsToOrganismReverse: [Protein!]!
     @relationship(
       type: "Protein_belongs_to_organism"
       direction: IN
-      properties: "Protein_belongs_to_organism"
     )
 }
 
@@ -432,26 +407,22 @@ type Pathway {
     @relationship(
       type: "Pathway_is_equivalent_to_pathway"
       direction: OUT
-      properties: "Pathway_is_equivalent_to_pathway"
     )
   pathwayIsPartOfPathway: [Pathway!]!
     @relationship(
       type: "Pathway_is_part_of_pathway"
       direction: OUT
-      properties: "Pathway_is_part_of_pathway"
     )
   pathwayIsOrthologToPathway: [Pathway!]!
     @relationship(
       type: "Pathway_is_ortholog_to_pathway"
       direction: OUT
-      properties: "Pathway_is_ortholog_to_pathway"
     )
 
   pathwayParticipatesPathway: [Pathway!]!
     @relationship(
       type: "Pathway_participates_pathway"
       direction: OUT
-      properties: "Pathway_participates_pathway"
     )
   proteinTakePartInPathwayReverse: [Protein!]!
     @relationship(
@@ -471,7 +442,6 @@ type Phenotype {
     @relationship(
       type: "Phenotype_is_a_phenotype"
       direction: OUT
-      properties: "Phenotype_is_a_phenotype"
     )
   phenotypeIsAssociatedWithDisease: [Disease!]!
     @relationship(
@@ -483,7 +453,6 @@ type Phenotype {
     @relationship(
       type: "Protein_is_associated_with_phenotype"
       direction: IN
-      properties: "Protein_is_associated_with_phenotype"
     )
 }
 
@@ -515,19 +484,16 @@ type Protein {
     @relationship(
       type: "Gene_encodes_protein"
       direction: IN
-      properties: "Gene_encodes_protein"
     )
   proteinBelongsToOrganism: [OrganismTaxon!]!
     @relationship(
       type: "Protein_belongs_to_organism"
       direction: OUT
-      properties: "Protein_belongs_to_organism"
     )
   proteinCatalyzesEcNumber: [EcNumber!]!
     @relationship(
       type: "Protein_catalyzes_ec_number"
       direction: OUT
-      properties: "Protein_catalyzes_ec_number"
     )
   proteinContributesToMolecularFunction: [MolecularFunction!]!
     @relationship(
@@ -569,7 +535,6 @@ type Protein {
     @relationship(
       type: "Protein_is_associated_with_phenotype"
       direction: OUT
-      properties: "Protein_is_associated_with_phenotype"
     )
   proteinLocatedInCellularComponent: [CellularComponent!]!
     @relationship(
@@ -606,19 +571,16 @@ type ProteinDomain {
     @relationship(
       type: "Protein_domain_enables_molecular_function"
       direction: OUT
-      properties: "Protein_domain_enables_molecular_function"
     )
   proteinDomainInvolvedInBiologicalProcess: [BiologicalProcess!]!
     @relationship(
       type: "Protein_domain_involved_in_biological_process"
       direction: OUT
-      properties: "Protein_domain_involved_in_biological_process"
     )
   proteinDomainLocatedInCellularComponent: [CellularComponent!]!
     @relationship(
       type: "Protein_domain_located_in_cellular_component"
       direction: OUT
-      properties: "Protein_domain_located_in_cellular_component"
     )
   proteinHasDomainReverse: [Protein!]!
     @relationship(
@@ -648,7 +610,6 @@ type SideEffect {
     @relationship(
       type: "Side_effect_is_a_side_effect"
       direction: OUT
-      properties: "Side_effect_is_a_side_effect"
     )
 }
 
@@ -660,54 +621,18 @@ type SideEffect {
 # BiologicalProcess -> Any
 ###
 
-interface Biological_process_is_a_biological_process @relationshipProperties {
-}
-
-interface Biological_process_negatively_regulates_biological_process
-  @relationshipProperties {
-}
-
-interface Biological_process_negatively_regulates_molecular_function
-  @relationshipProperties {
-}
-
-interface Biological_process_part_of_biological_process
-  @relationshipProperties {
-}
-
-interface Biological_process_positively_regulates_biological_process
-  @relationshipProperties {
-}
-
-interface Biological_process_positively_regulates_molecular_function
-  @relationshipProperties {
-}
-
 ###
 # CellularComponent -> Any
 ###
-
-interface Cellular_component_is_a_cellular_component @relationshipProperties {
-}
-
-interface Cellular_component_part_of_cellular_component
-  @relationshipProperties {
-}
 
 ###
 # Disease -> Any
 ###
 
-interface Disease_is_a_disease @relationshipProperties {
-}
-
 interface Disease_is_associated_with_disease @relationshipProperties {
   disgenet_jaccard_genes_score: Float
   disgenet_jaccard_variants_score: Float
   source: [String]
-}
-
-interface Disease_is_comorbid_with_disease @relationshipProperties {
 }
 
 interface Disease_is_treated_by_drug @relationshipProperties {
@@ -724,15 +649,9 @@ interface Disease_modulates_pathway @relationshipProperties {
 # EcNumber -> Any
 ###
 
-interface Ec_number_is_a_ec_number @relationshipProperties {
-}
-
 ###
 # Gene -> Any
 ###
-
-interface Gene_encodes_protein @relationshipProperties {
-}
 
 interface Gene_is_orthologous_with_gene @relationshipProperties {
   oma_orthology_score: Float
@@ -766,21 +685,6 @@ interface Gene_regulates_gene @relationshipProperties {
 # MolecularFunction -> Any
 ###
 
-interface Molecular_function_is_a_molecular_function @relationshipProperties {
-}
-
-interface Molecular_function_negatively_regulates_molecular_function
-  @relationshipProperties {
-}
-
-interface Molecular_function_part_of_molecular_function
-  @relationshipProperties {
-}
-
-interface Molecular_function_positively_regulates_molecular_function
-  @relationshipProperties {
-}
-
 ###
 # Compound -> Any
 ###
@@ -801,31 +705,13 @@ interface Compound_targets_protein @relationshipProperties {
 # OrganismTaxon -> Any
 ###
 
-interface Organism_causes_disease @relationshipProperties {
-}
-
 ###
 # Pathway -> Any
 ###
 
-interface Pathway_is_equivalent_to_pathway @relationshipProperties {
-}
-
-interface Pathway_is_part_of_pathway @relationshipProperties {
-}
-
-interface Pathway_is_ortholog_to_pathway @relationshipProperties {
-}
-
-interface Pathway_participates_pathway @relationshipProperties {
-}
-
 ###
 # Phenotype -> Any
 ###
-
-interface Phenotype_is_a_phenotype @relationshipProperties {
-}
 
 interface Phenotype_is_associated_with_disease @relationshipProperties {
   evidence: String
@@ -835,12 +721,6 @@ interface Phenotype_is_associated_with_disease @relationshipProperties {
 ###
 # Protein -> Any
 ###
-
-interface Protein_belongs_to_organism @relationshipProperties {
-}
-
-interface Protein_catalyzes_ec_number @relationshipProperties {
-}
 
 interface Protein_contributes_to_molecular_function @relationshipProperties {
   evidence_code: String
@@ -877,9 +757,6 @@ interface Protein_is_active_in_cellular_component @relationshipProperties {
   reference: String
 }
 
-interface Protein_is_associated_with_phenotype @relationshipProperties {
-}
-
 interface Protein_located_in_cellular_component @relationshipProperties {
   evidence_code: String
   reference: String
@@ -898,22 +775,9 @@ interface Protein_take_part_in_pathway @relationshipProperties {
 # ProteinDomain -> Any
 ###
 
-interface Protein_domain_enables_molecular_function @relationshipProperties {
-}
-
-interface Protein_domain_involved_in_biological_process
-  @relationshipProperties {
-}
-
-interface Protein_domain_located_in_cellular_component @relationshipProperties {
-}
-
 ###
 # SideEffect -> Any
 ###
-
-interface Side_effect_is_a_side_effect @relationshipProperties {
-}
 
 ###
 # Drug -> Any
