@@ -1,5 +1,7 @@
 # crossbar-graphql
 
+[![Docker](https://github.com/HUBioDataLab/crossbar-graphql/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/HUBioDataLab/crossbar-graphql/actions/workflows/docker-publish.yml)
+
 ## env file
 
 `.env` file is necessary for this package to work.
