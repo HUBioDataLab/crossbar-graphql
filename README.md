@@ -38,7 +38,7 @@ cd src/
 npm install
 ```
 
-Setup the environment, `.env` file is necessary for this module to work.
+Set the environment up, `.env` file is necessary for this module to work.
 Please declare it with the template below.
 
 ```env
