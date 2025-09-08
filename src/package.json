@@ -20,12 +20,11 @@
   "author": {
     "name": "Melih DARCAN",
     "email": "57872471+MelihDarcanxyz@users.noreply.github.com",
-    "url": "https://melihdarcan.xyz"
+    "url": "https://melihdarcan.dev"
   },
   "contributors": [],
   "scripts": {
-    "dev": "",
-    "test": ""
+    "run": "node index.js"
   },
   "dependencies": {
     "@apollo/server": "^4.7.5",
