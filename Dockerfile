@@ -1,4 +1,4 @@
-FROM node:lts-bookworm
+FROM node:lts-trixie
 
 COPY src apollo
 WORKDIR apollo
