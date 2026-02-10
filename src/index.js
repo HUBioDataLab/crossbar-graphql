@@ -15,7 +15,7 @@ const typeDefs = `#graphql
 #
 #######################################
 
-type BiologicalProcess {
+type BiologicalProcess @node {
   id: ID
   name: String
   anc2vec_embedding: [Float]
@@ -62,7 +62,7 @@ type BiologicalProcess {
     )
 }
 
-type CellularComponent {
+type CellularComponent @node {
   id: ID
   name: String
   anc2vec_embedding: [Float]
@@ -101,7 +101,7 @@ type CellularComponent {
     )
 }
 
-type Compound {
+type Compound @node {
   id: ID
   alogp: Float
   full_mwt: Float
@@ -121,7 +121,7 @@ type Compound {
     )
 }
 
-type Disease {
+type Disease @node {
   id: ID
   name: String
   doc2vec_embedding: [Float]
@@ -184,7 +184,7 @@ type Disease {
     )
 }
 
-type Drug {
+type Drug @node {
   id: ID
   name: String
   atc_codes: [String]
@@ -251,7 +251,7 @@ type Drug {
     )
 }
 
-type EcNumber {
+type EcNumber @node {
   id: ID
   name: String
   rxnfp_embedding: [Float]
@@ -267,7 +267,7 @@ type EcNumber {
     )
 }
 
-type Gene {
+type Gene @node {
   id: ID
   ensembl_gene_ids: [String]
   ensembl_transcript_ids: [String]
@@ -312,13 +312,13 @@ type Gene {
     )
 }
 
-type GOTerm {
+type GOTerm @node {
   id: ID
   name: String
   anc2vec_embedding: [Float]
 }
 
-type MolecularFunction {
+type MolecularFunction @node {
   id: ID
   name: String
   anc2vec_embedding: [Float]
@@ -371,7 +371,7 @@ type MolecularFunction {
     )
 }
 
-type OrganismTaxon {
+type OrganismTaxon @node {
   id: ID
   organism_name: String
   organismCausesDisease: [Disease!]!
@@ -386,7 +386,7 @@ type OrganismTaxon {
     )
 }
 
-type Pathway {
+type Pathway @node {
   id: ID
   biokeen_embedding: [Float]
   name: String
@@ -433,7 +433,7 @@ type Pathway {
   ## EXTRA RELATION
 }
 
-type Phenotype {
+type Phenotype @node {
   id: ID
   cada_embedding: [Float]
   name: String
@@ -456,7 +456,7 @@ type Phenotype {
     )
 }
 
-type Protein {
+type Protein @node {
   id: ID
   esm2_embedding: [Float]
   length: Int
@@ -556,7 +556,7 @@ type Protein {
     )
 }
 
-type ProteinDomain {
+type ProteinDomain @node {
   id: ID
   name: String
   dom2vec_embedding: [Float]
@@ -590,13 +590,13 @@ type ProteinDomain {
     )
 }
 
-type Reaction {
+type Reaction @node {
   id: ID
   name: String
   rxnfp_embedding: [Float]
 }
 
-type SideEffect {
+type SideEffect @node {
   id: ID
   name: String
   synonyms: [String]
