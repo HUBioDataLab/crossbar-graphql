@@ -840,14 +840,17 @@ const driver = neo4j.driver(
 */
 const neoSchema = new Neo4jGraphQL({typeDefs, driver});// resolvers, driver });
 
-const schema = await neoSchema.getSchema();
-
 const server = new ApolloServer({
-    schema,
-    context: ({ req }) => ({ req, sessionConfig: { database: process.env.NEO4J_DATABASE_NAME }}),
+    schema: await neoSchema.getSchema(),
 });
 
-await server.listen(process.env.API_PORT);
+const { url } = await startStandaloneServer(server, {
+    context: async ({ req }) =>({
+      req,
+      sessionConfig: { database: process.env.NEO4J_DATABASE_NAME }
+    }),
+    listen: { port: process.env.API_PORT || 4000},
+});
 
-console.log(`🚀 Server listening on ${process.env.API_PORT}`);
+console.log(`🚀 Server ready at ${url}`);
 
