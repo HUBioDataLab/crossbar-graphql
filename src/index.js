@@ -614,7 +614,7 @@ type SideEffect @node {
 }
 
 ###########################
-# Relationship interfaces #
+# Relationship types #
 ###########################
 
 ###
@@ -629,19 +629,19 @@ type SideEffect @node {
 # Disease -> Any
 ###
 
-interface Disease_is_associated_with_disease @relationshipProperties {
+type Disease_is_associated_with_disease @relationshipProperties {
   disgenet_jaccard_genes_score: Float
   disgenet_jaccard_variants_score: Float
   source: [String]
 }
 
-interface Disease_is_treated_by_drug @relationshipProperties {
+type Disease_is_treated_by_drug @relationshipProperties {
   max_phase: Int
   pubmed_ids: [String]
   source: [String]
 }
 
-interface Disease_modulates_pathway @relationshipProperties {
+type Disease_modulates_pathway @relationshipProperties {
   source: [String]
 }
 
@@ -653,13 +653,13 @@ interface Disease_modulates_pathway @relationshipProperties {
 # Gene -> Any
 ###
 
-interface Gene_is_orthologous_with_gene @relationshipProperties {
+type Gene_is_orthologous_with_gene @relationshipProperties {
   oma_orthology_score: Float
   relation_type: String
   source: [String]
 }
 
-interface Gene_is_related_to_disease @relationshipProperties {
+type Gene_is_related_to_disease @relationshipProperties {
   allele_id: String
   clinical_significance: String
   dbsnp_id: [String]
@@ -674,7 +674,7 @@ interface Gene_is_related_to_disease @relationshipProperties {
   variation_id: String
 }
 
-interface Gene_regulates_gene @relationshipProperties {
+type Gene_regulates_gene @relationshipProperties {
   dorothea_confidence_level: String
   pubmed_id: [String]
   source: [String]
@@ -689,7 +689,7 @@ interface Gene_regulates_gene @relationshipProperties {
 # Compound -> Any
 ###
 
-interface Compound_targets_protein @relationshipProperties {
+type Compound_targets_protein @relationshipProperties {
   id: ID
   activity_type: String
   activity_value: Float
@@ -713,7 +713,7 @@ interface Compound_targets_protein @relationshipProperties {
 # Phenotype -> Any
 ###
 
-interface Phenotype_is_associated_with_disease @relationshipProperties {
+type Phenotype_is_associated_with_disease @relationshipProperties {
   evidence: String
   pubmed_ids: [String]
 }
@@ -722,22 +722,22 @@ interface Phenotype_is_associated_with_disease @relationshipProperties {
 # Protein -> Any
 ###
 
-interface Protein_contributes_to_molecular_function @relationshipProperties {
+type Protein_contributes_to_molecular_function @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_enables_molecular_function @relationshipProperties {
+type Protein_enables_molecular_function @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_has_domain @relationshipProperties {
+type Protein_has_domain @relationshipProperties {
   start: String
   end: String
 }
 
-interface Protein_interacts_with_protein @relationshipProperties {
+type Protein_interacts_with_protein @relationshipProperties {
   intact_score: Float
   interaction_type: String
   method: String
@@ -747,27 +747,27 @@ interface Protein_interacts_with_protein @relationshipProperties {
   string_physical_combined_score: Int
 }
 
-interface Protein_involved_in_biological_process @relationshipProperties {
+type Protein_involved_in_biological_process @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_is_active_in_cellular_component @relationshipProperties {
+type Protein_is_active_in_cellular_component @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_located_in_cellular_component @relationshipProperties {
+type Protein_located_in_cellular_component @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_part_of_cellular_component @relationshipProperties {
+type Protein_part_of_cellular_component @relationshipProperties {
   evidence_code: String
   reference: String
 }
 
-interface Protein_take_part_in_pathway @relationshipProperties {
+type Protein_take_part_in_pathway @relationshipProperties {
   source: String
 }
 
@@ -783,32 +783,32 @@ interface Protein_take_part_in_pathway @relationshipProperties {
 # Drug -> Any
 ###
 
-interface Drug_downregulates_gene @relationshipProperties {
+type Drug_downregulates_gene @relationshipProperties {
   references: [String]
 }
 
-interface Drug_has_side_effect @relationshipProperties {
+type Drug_has_side_effect @relationshipProperties {
   frequency: String
   proportional_reporting_ratio: Float
   source: [String]
 }
 
-interface Drug_has_target_in_pathway @relationshipProperties {
+type Drug_has_target_in_pathway @relationshipProperties {
   source: String
 }
 
-interface Drug_upregulates_gene @relationshipProperties {
+type Drug_upregulates_gene @relationshipProperties {
   references: [String]
 }
 
-interface Drug_interacts_with_drug @relationshipProperties {
+type Drug_interacts_with_drug @relationshipProperties {
   interaction_level: String
   interaction_type: [String]
   recommendation: String
   source: [String]
 }
 
-interface Drug_targets_protein @relationshipProperties {
+type Drug_targets_protein @relationshipProperties {
   activity_type: String
   activity_value: Float
   confidence_score: Float
