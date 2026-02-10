@@ -18,7 +18,7 @@ const typeDefs = `#graphql
 type BiologicalProcess @node {
   id: ID
   name: String
-  anc2vec_embedding: [Float]
+  anc2vec_embedding: [Float!]
   biologicalProcessIsABiologicalProcess: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_is_a_biological_process"
@@ -65,7 +65,7 @@ type BiologicalProcess @node {
 type CellularComponent @node {
   id: ID
   name: String
-  anc2vec_embedding: [Float]
+  anc2vec_embedding: [Float!]
   cellularComponentIsACellularComponent: [CellularComponent!]!
     @relationship(
       type: "Cellular_component_is_a_cellular_component"
@@ -109,7 +109,7 @@ type Compound @node {
   inchi: String
   inchikey: String
   qed_score: Float
-  selformer_embedding: [Float]
+  selformer_embedding: [Float!]
   smiles: String
   species: String
   type: String
@@ -124,7 +124,7 @@ type Compound @node {
 type Disease @node {
   id: ID
   name: String
-  doc2vec_embedding: [Float]
+  doc2vec_embedding: [Float!]
   doid: String
   efo: String
   hp: String
@@ -135,7 +135,7 @@ type Disease @node {
   ncit: String
   omim: String
   orphanet: String
-  synonyms: [String]
+  synonyms: [String!]
   umls: String
   diseaseIsADisease: [Disease!]!
     @relationship(
@@ -187,7 +187,7 @@ type Disease @node {
 type Drug @node {
   id: ID
   name: String
-  atc_codes: [String]
+  atc_codes: [String!]
   bindingdb: String
   cas_number: String
   chebi: String
@@ -195,8 +195,8 @@ type Drug @node {
   clinicaltrials: String
   drugbank_id: String
   drugcentral: String
-  general_references: [String]
-  groups: [String]
+  general_references: [String!]
+  groups: [String!]
   inchi: String
   inchikey: String
   kegg_drug: String
@@ -204,7 +204,7 @@ type Drug @node {
   pharmgkb: String
   pubchem: String
   rxcui: String
-  selformer_embedding: [Float]
+  selformer_embedding: [Float!]
   smiles: String
   zinc: String
   diseaseIsTreatedByDrugReverse: [Disease!]!
@@ -254,7 +254,7 @@ type Drug @node {
 type EcNumber @node {
   id: ID
   name: String
-  rxnfp_embedding: [Float]
+  rxnfp_embedding: [Float!]
   ecNumberIsAEcNumber: [EcNumber!]!
     @relationship(
       type: "Ec_number_is_a_ec_number"
@@ -269,12 +269,12 @@ type EcNumber @node {
 
 type Gene @node {
   id: ID
-  ensembl_gene_ids: [String]
-  ensembl_transcript_ids: [String]
-  gene_names: [String]
+  ensembl_gene_ids: [String!]
+  ensembl_transcript_ids: [String!]
+  gene_names: [String!]
   gene_symbol: String
-  kegg_ids: [String]
-  nt_embedding: [Float]
+  kegg_ids: [String!]
+  nt_embedding: [Float!]
   drugDownregulatesGeneReverse: [Drug!]!
     @relationship(
       type: "Drug_downregulates_gene"
@@ -315,13 +315,13 @@ type Gene @node {
 type GOTerm @node {
   id: ID
   name: String
-  anc2vec_embedding: [Float]
+  anc2vec_embedding: [Float!]
 }
 
 type MolecularFunction @node {
   id: ID
   name: String
-  anc2vec_embedding: [Float]
+  anc2vec_embedding: [Float!]
   biologicalProcessNegativelyRegulatesMolecularFunctionReverse: [BiologicalProcess!]!
     @relationship(
       type: "Biological_process_negatively_regulates_molecular_function"
@@ -388,7 +388,7 @@ type OrganismTaxon @node {
 
 type Pathway @node {
   id: ID
-  biokeen_embedding: [Float]
+  biokeen_embedding: [Float!]
   name: String
   organism: String
   diseaseModulatesPathwayReverse: [Disease!]!
@@ -435,9 +435,9 @@ type Pathway @node {
 
 type Phenotype @node {
   id: ID
-  cada_embedding: [Float]
+  cada_embedding: [Float!]
   name: String
-  synonyms: [String]
+  synonyms: [String!]
   phenotypeIsAPhenotype: [Phenotype!]!
     @relationship(
       type: "Phenotype_is_a_phenotype"
@@ -458,16 +458,16 @@ type Phenotype @node {
 
 type Protein @node {
   id: ID
-  esm2_embedding: [Float]
+  esm2_embedding: [Float!]
   length: Int
   mass: Int
   organism_id: Int
   organism_name: String
   primary_protein_name: String
-  protein_names: [String]
-  prott5_embedding: [Float]
+  protein_names: [String!]
+  prott5_embedding: [Float!]
   sequence: String
-  xref_proteomes: [String]
+  xref_proteomes: [String!]
   compoundTargetsProteinReverse: [Compound!]!
     @relationship(
       type: "Compound_targets_protein"
@@ -559,12 +559,12 @@ type Protein @node {
 type ProteinDomain @node {
   id: ID
   name: String
-  dom2vec_embedding: [Float]
-  child_list: [String]
-  ec: [String]
-  parent_list: [String]
-  pdb: [String]
-  pfam: [String]
+  dom2vec_embedding: [Float!]
+  child_list: [String!]
+  ec: [String!]
+  parent_list: [String!]
+  pdb: [String!]
+  pfam: [String!]
   protein_count: Int
   type: String
   proteinDomainEnablesMolecularFunction: [MolecularFunction!]!
@@ -593,13 +593,13 @@ type ProteinDomain @node {
 type Reaction @node {
   id: ID
   name: String
-  rxnfp_embedding: [Float]
+  rxnfp_embedding: [Float!]
 }
 
 type SideEffect @node {
   id: ID
   name: String
-  synonyms: [String]
+  synonyms: [String!]
   drugHasSideEffectReverse: [Drug!]!
     @relationship(
       type: "Drug_has_side_effect"
@@ -632,17 +632,17 @@ type SideEffect @node {
 type Disease_is_associated_with_disease @relationshipProperties {
   disgenet_jaccard_genes_score: Float
   disgenet_jaccard_variants_score: Float
-  source: [String]
+  source: [String!]
 }
 
 type Disease_is_treated_by_drug @relationshipProperties {
   max_phase: Int
-  pubmed_ids: [String]
-  source: [String]
+  pubmed_ids: [String!]
+  source: [String!]
 }
 
 type Disease_modulates_pathway @relationshipProperties {
-  source: [String]
+  source: [String!]
 }
 
 ###
@@ -656,28 +656,28 @@ type Disease_modulates_pathway @relationshipProperties {
 type Gene_is_orthologous_with_gene @relationshipProperties {
   oma_orthology_score: Float
   relation_type: String
-  source: [String]
+  source: [String!]
 }
 
 type Gene_is_related_to_disease @relationshipProperties {
   allele_id: String
   clinical_significance: String
-  dbsnp_id: [String]
+  dbsnp_id: [String!]
   diseases_confidence_score: Float
   disgenet_gene_disease_score: Float
   disgenet_variant_disease_score: Float
   opentargets_score: Float
-  pubmed_ids: [String]
+  pubmed_ids: [String!]
   review_status: Int
-  source: [String]
-  variant_source: [String]
+  source: [String!]
+  variant_source: [String!]
   variation_id: String
 }
 
 type Gene_regulates_gene @relationshipProperties {
   dorothea_confidence_level: String
-  pubmed_id: [String]
-  source: [String]
+  pubmed_id: [String!]
+  source: [String!]
   tf_effect: String
 }
 
@@ -693,11 +693,11 @@ type Compound_targets_protein @relationshipProperties {
   id: ID
   activity_type: String
   activity_value: Float
-  assay_chembl: [String]
+  assay_chembl: [String!]
   confidence_score: Float
   pchembl: Float
-  references: [String]
-  source: [String]
+  references: [String!]
+  source: [String!]
   stitch_combined_score: Float
 }
 
@@ -715,7 +715,7 @@ type Compound_targets_protein @relationshipProperties {
 
 type Phenotype_is_associated_with_disease @relationshipProperties {
   evidence: String
-  pubmed_ids: [String]
+  pubmed_ids: [String!]
 }
 
 ###
@@ -741,8 +741,8 @@ type Protein_interacts_with_protein @relationshipProperties {
   intact_score: Float
   interaction_type: String
   method: String
-  pubmed_id: [String]
-  source: [String]
+  pubmed_id: [String!]
+  source: [String!]
   string_combined_score: Int
   string_physical_combined_score: Int
 }
@@ -784,13 +784,13 @@ type Protein_take_part_in_pathway @relationshipProperties {
 ###
 
 type Drug_downregulates_gene @relationshipProperties {
-  references: [String]
+  references: [String!]
 }
 
 type Drug_has_side_effect @relationshipProperties {
   frequency: String
   proportional_reporting_ratio: Float
-  source: [String]
+  source: [String!]
 }
 
 type Drug_has_target_in_pathway @relationshipProperties {
@@ -798,14 +798,14 @@ type Drug_has_target_in_pathway @relationshipProperties {
 }
 
 type Drug_upregulates_gene @relationshipProperties {
-  references: [String]
+  references: [String!]
 }
 
 type Drug_interacts_with_drug @relationshipProperties {
   interaction_level: String
-  interaction_type: [String]
+  interaction_type: [String!]
   recommendation: String
-  source: [String]
+  source: [String!]
 }
 
 type Drug_targets_protein @relationshipProperties {
@@ -819,8 +819,8 @@ type Drug_targets_protein @relationshipProperties {
   mechanism_of_action: String
   mechanism_of_action_type: String
   pchembl: Float
-  references: [String]
-  source: [String]
+  references: [String!]
+  source: [String!]
   stitch_combined_score: Float
 }
 `
